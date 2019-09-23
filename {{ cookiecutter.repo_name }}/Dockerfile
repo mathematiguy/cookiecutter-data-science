@@ -1,5 +1,7 @@
 FROM ubuntu:18.04
 
+RUN apt-get install -y python3-dev python3-apt python3-pip
+
 # Install python requirements
 COPY requirements.txt /root/requirements.txt
 RUN pip3 install -r /root/requirements.txt
