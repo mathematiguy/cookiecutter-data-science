@@ -1,5 +1,6 @@
 FROM ubuntu:18.04
 
+RUN apt-get update
 RUN apt-get install -y python3-dev python3-apt python3-pip
 
 # Install python requirements
