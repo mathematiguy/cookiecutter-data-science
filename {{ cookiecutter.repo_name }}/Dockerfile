@@ -4,6 +4,7 @@ RUN apt-get update
 RUN apt-get install -y python3-dev python3-apt python3-pip
 
 # Install python requirements
+COPY setup.py src /root/
 COPY requirements.txt /root/requirements.txt
 RUN pip3 install -r /root/requirements.txt
 
