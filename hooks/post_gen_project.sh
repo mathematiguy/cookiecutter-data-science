@@ -11,4 +11,4 @@ git add .
 git commit -m "Initial commit - set up cookiecutter project from template"
 
 # Build docker image
-make docker
+make docker DOCKER_ARGS=--no-cache
