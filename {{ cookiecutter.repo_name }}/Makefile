@@ -42,7 +42,7 @@ jupyter:
 
 .PHONY: docker
 docker:
-	docker build --tag $(IMAGE):$(GIT_TAG) .
+	docker build --tag $(DOCKER_ARGS) $(IMAGE):$(GIT_TAG) .
 	docker tag $(IMAGE):$(GIT_TAG) $(IMAGE):latest
 
 .PHONY: docker-push
