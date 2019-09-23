@@ -4,6 +4,12 @@
 # GLOBALS                                                                       #
 #################################################################################
 
+PROJECT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+BUCKET = {{ cookiecutter.s3_bucket }}
+PROFILE = {{ cookiecutter.aws_profile }}
+PROJECT_NAME = {{ cookiecutter.repo_name }}
+PYTHON = {{ cookiecutter.python_interpreter }}
+
 DOCKER_REGISTRY := {{ cookiecutter.docker_repo }}
 IMAGE := $(DOCKER_REGISTRY)/$(PROJECT_NAME)
 RUN ?= docker run $(DOCKER_ARGS) --rm -v $$(pwd):/work -w /work -u $(UID):$(GID) $(IMAGE)
