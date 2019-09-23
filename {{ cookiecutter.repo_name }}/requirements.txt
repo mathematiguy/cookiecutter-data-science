@@ -1,5 +1,5 @@
 # local package
--e /root
+-e /work
 
 # external requirements
 click
