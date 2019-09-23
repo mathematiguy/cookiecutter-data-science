@@ -8,6 +8,8 @@ RUN echo "Pacific/Auckland" > /etc/timezone
 RUN dpkg-reconfigure -f noninteractive tzdata
 
 ENV DEBIAN_FRONTEND noninteractive
+ENV LC_ALL=C.UTF-8
+ENV LANG=C.UTF-8
 
 # Set the locale to New Zealand
 RUN apt-get -y install locales
@@ -18,7 +20,10 @@ RUN dpkg-reconfigure locales
 RUN apt-get update
 RUN apt-get install -y python3-dev python3-apt python3-pip
 
-# Install python requirements
-COPY setup.py {{ cookiecutter.project_name.replace("-", "_").replace(" ", "_") }} /root/
-COPY requirements.txt /root/requirements.txt
-RUN pip3 install -r /root/requirements.txt
+# Copy python package to container
+COPY setup.py {{ cookiecutter.project_name.replace("-", "_").replace(" ", "_") }} /work/
+COPY requirements.txt /work/requirements.txt
+
+# Install requirements
+WORKDIR /work
+RUN pip3 install -r /work/requirements.txt
