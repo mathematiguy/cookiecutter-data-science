@@ -8,7 +8,6 @@ PROJECT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 BUCKET = {{ cookiecutter.s3_bucket }}
 PROFILE = {{ cookiecutter.aws_profile }}
 PROJECT_NAME = {{ cookiecutter.repo_name }}
-PYTHON = {{ cookiecutter.python_interpreter }}
 
 DOCKER_REGISTRY := {{ cookiecutter.docker_repo }}
 IMAGE := $(DOCKER_REGISTRY)/$(PROJECT_NAME)
@@ -24,7 +23,7 @@ GIT_TAG ?= $(shell git log --oneline | head -n1 | awk '{print $$1}')
 
 ## Make Dataset
 data: requirements
-	$(RUN) $(PYTHON) src/data/make_dataset.py data/raw data/processed
+	$(RUN) python3 src/data/make_dataset.py data/raw data/processed
 
 JUPYTER_PASSWORD ?= jupyter
 JUPYTER_PORT ?= 8888
@@ -95,7 +94,7 @@ endif
 
 ## Test python environment is setup correctly
 test_environment:
-	$(RUN) $(PYTHON) test_environment.py
+	$(RUN) python3 test_environment.py
 
 #################################################################################
 # PROJECT RULES                                                                 #
