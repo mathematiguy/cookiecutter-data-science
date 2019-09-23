@@ -39,10 +39,9 @@ jupyter:
 			python -c \
 			"from IPython.lib import passwd; print(passwd('$(JUPYTER_PASSWORD)'))")
 
-
 .PHONY: docker
 docker:
-	docker build --tag $(DOCKER_ARGS) $(IMAGE):$(GIT_TAG) .
+	docker build $(DOCKER_ARGS) --tag $(IMAGE):$(GIT_TAG) .
 	docker tag $(IMAGE):$(GIT_TAG) $(IMAGE):latest
 
 .PHONY: docker-push
