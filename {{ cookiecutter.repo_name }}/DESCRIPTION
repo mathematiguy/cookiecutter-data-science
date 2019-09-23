@@ -1,0 +1,18 @@
+Package: {{ cookiecutter.repo_name }}
+Title: {{ cookiecutter.project_title }}
+Version: {{ cookiecutter.version }}
+Maintainer: {{ cookiecutter.full_name}} <{{ cookiecutter.email }}>
+Description: {{ cookiecutter.project_short_description }}
+Author: {{ cookiecutter.full_name }}
+Depends: {{ cookiecutter.depends }}
+Imports:
+Suggests:
+    testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+License: {{ cookiecutter.license }}
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name}}
+BugReports: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name}}/issues
