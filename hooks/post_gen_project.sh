@@ -1,5 +1,8 @@
 #! /bin/bash
 
+# Fail noisily
+set -ex
+
 # Create git repository
 git init
 
