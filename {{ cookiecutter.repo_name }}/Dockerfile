@@ -20,6 +20,15 @@ RUN dpkg-reconfigure locales
 RUN apt-get update
 RUN apt-get install -y python3-dev python3-apt python3-pip
 
+# Install R
+RUN apt-get update && apt-get install -y --no-install-recommends \
+	r-base-dev \
+	r-recommended
+
+# Install tidyverse (and its dependencies)
+RUN apt-get update && apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev
+RUN Rscript -e 'install.packages(c("packrat", "tidyverse"), Ncpus = parallel::detectCores()-1)'
+
 # Copy python package to container
 COPY setup.py {{ cookiecutter.project_name.replace("-", "_").replace(" ", "_") }} /work/
 COPY requirements.txt /work/requirements.txt
