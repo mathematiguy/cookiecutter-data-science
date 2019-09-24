@@ -1,6 +1,6 @@
 ---
 title: "{{ cookiecutter.project_name }}"
-author: "{{ cookiecutter.full_name }}"
+author: "{{ cookiecutter.author_name }}"
 date: \today
 output: pdf_document
 bibliography: references.bib
