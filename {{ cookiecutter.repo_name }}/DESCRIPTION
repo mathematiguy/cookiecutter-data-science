@@ -1,9 +1,9 @@
 Package: {{ cookiecutter.repo_name }}
 Title: {{ cookiecutter.project_name }}
 Version: {{ cookiecutter.version }}
-Maintainer: {{ cookiecutter.full_name}} <{{ cookiecutter.email }}>
-Description: {{ cookiecutter.project_short_description }}
-Author: {{ cookiecutter.full_name }}
+Maintainer: {{ cookiecutter.author_name}} <{{ cookiecutter.email }}>
+Description: {{ cookiecutter.description }}
+Author: {{ cookiecutter.author_name }}
 Depends: {{ cookiecutter.depends }}
 Imports:
 Suggests:
