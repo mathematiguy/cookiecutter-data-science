@@ -10,6 +10,5 @@
     "email": "calebjdmoses@gmail.com",
     "github_username": "mathematiguy",
     "version": "0.0.1",
-    "license": "Artistic-2.0",
     "depends": "R (>= 3.3.1)"
 }
