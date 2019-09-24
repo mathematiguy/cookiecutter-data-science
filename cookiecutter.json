@@ -1,14 +1,14 @@
 {
     "project_name": "project_name",
     "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+    "email": "calebjdmoses@gmail.com",
+    "github_username": "mathematiguy",
     "docker_repo": "mathematiguy",
     "author_name": "Caleb Moses",
     "description": "A short description of the project.",
     "open_source_license": ["MIT", "BSD-3-Clause", "No license file"],
     "s3_bucket": "[OPTIONAL] your-bucket-for-syncing-data (do not include 's3://')",
     "aws_profile": "default",
-    "email": "calebjdmoses@gmail.com",
-    "github_username": "mathematiguy",
     "version": "0.0.1",
     "depends": "R (>= 3.3.1)"
 }
