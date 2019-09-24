@@ -1,4 +1,4 @@
-#' {{ cookiecutter.project_short_description }}
+#' {{ cookiecutter.description }}
 #'
 #' @docType package
 #' @name {{ cookiecutter.repo_name }}

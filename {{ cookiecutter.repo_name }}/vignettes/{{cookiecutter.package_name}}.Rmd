@@ -1,11 +1,11 @@
 ---
-title: "{{ cookiecutter.project_title }}"
-author: "{{ cookiecutter.full_name }}"
+title: "{{ cookiecutter.project_name }}"
+author: "{{ cookiecutter.author_name }}"
 date: \today
 output: pdf_document
 bibliography: references.bib
 vignette: >
-  %\VignetteIndexEntry{ {{ cookiecutter.project_title }} }
+  %\VignetteIndexEntry{ {{ cookiecutter.project_name }} }
   %\VignetteEngine{knitr::rmarkdown}
   %\usepackage[utf8]{inputenc} 
 ---
